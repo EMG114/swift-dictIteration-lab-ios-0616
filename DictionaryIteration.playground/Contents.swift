@@ -19,7 +19,10 @@
 // write your code here
 
 
-
+var bandsAndBestAlbums = [ "Nirvana" : "Nevermind",
+    	"Blondie " : "Parallel Lines",
+    "The Kinks" : "Low Budget",
+    "The Beatles" : "Sgt. Pepper's Lonely Hearts Club Band"]
 
 /*: question2
  ### 2. Oops, we forgot an album! Add the Pixie's _Doolittle_ to the dictionary you created in Question 1.
@@ -27,7 +30,8 @@
 // write your code here
 
 
-
+bandsAndBestAlbums["Pixie"] = "Doolittle"
+bandsAndBestAlbums
 
 /*: question3
  ### 3. We don't care that much about The Kinks. Delete them from the dictionary you created in Question 1.
@@ -35,7 +39,8 @@
 // write your code here
 
 
-
+bandsAndBestAlbums["The kinks"] = nil
+bandsAndBestAlbums
 
 
 /*: question4
@@ -45,13 +50,16 @@ let bandName = "Nirvana"
 // write your code here
 
 
-
-
+if let album = bandsAndBestAlbums[bandName] {
+        print ("\(bandName)'s top-selling album was \(album)")
+    }
 /*: question5
  ### 5. Iterate over the dictionary you created in Question 1 and print "<Band>'s top-selling album was <Album>" for each item in the dictionary.
  */
 // write your code here
-
+for (bandName, album) in bandsAndBestAlbums {
+    print ("\(bandName)'s top-selling album was \(album)")
+}
 
 
 
@@ -60,14 +68,12 @@ let bandName = "Nirvana"
  */
 
 
-
+//A tuple, although not a data structure per se. It returns a pair of struc values which in this case are both key and values strings
 
 /*: question7
  ### 7. Imagine every student in every grade in a high school took an exam. Each student got a letter grade based on their test results (A, B, C, D, and F). The results were averaged together per grade. How could you represent this mapping of grades to exam average?
  */
-
-
-
+var gradesOfStudents : [Int : String]
 
 /*: question8
  ### 8. Create a _constant_ dictionary to store the exam results described in Question 8. This dictionary should be of type `[Int: String]`. Here are the results you can use:
@@ -79,6 +85,10 @@ let bandName = "Nirvana"
  */
 // write your code here
 
+let grades = [9 : "B",
+                10 : "A",
+                11 : "C",
+                12 : "B"]
 
 
 
@@ -87,6 +97,9 @@ let bandName = "Nirvana"
  */
 // write your code here
 
+for (classGrade, grade) in grades {
+        print("Grade \(classGrade) got \(grade)")
+    }
 
 
 
@@ -96,7 +109,11 @@ let bandName = "Nirvana"
 // write your code here
 
 
-
+for (classGrade, grade) in grades {
+    if grade == "A" {
+        print("Grade \(classGrade) got the highest score with a grade of \(grade)!")
+          }
+    }
 
 /*:
  [Solution](solution)
